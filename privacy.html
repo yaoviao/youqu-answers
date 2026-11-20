@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 有趣的回答</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; background:#070B14; color:#EAF2FF;
+         font-family:-apple-system,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+         line-height:1.75; }
+  main { max-width:760px; margin:0 auto; padding:48px 22px 80px; }
+  h1 { font-size:28px; margin:0 0 8px; }
+  h2 { font-size:18px; margin:36px 0 10px; color:#4C8DFF; }
+  p, li { font-size:15px; color:#C8D4E6; }
+  strong { color:#EAF2FF; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; }
+  th, td { border:1px solid #1E2C44; padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#0F172A; color:#EAF2FF; }
+  code { background:#16233B; padding:1px 5px; border-radius:4px; font-size:13px; }
+  ul { padding-left:20px; }
+  a { color:#4C8DFF; }
+</style>
+</head>
+<body><main>
+<h1>隐私政策 · 有趣的回答</h1>
+<p>最后更新：2026-11-20</p>
+<p>「有趣的回答」（以下简称&quot;本应用&quot;）是一个提问与回答的小工具。这份政策说明我们收集什么、怎么用、你能怎么删。<strong>我们没有广告 SDK、没有统计 SDK、不向第三方出售或共享你的数据。</strong></p>
+<h2>一、我们收集哪些信息</h2>
+<table>
+<tr><th>信息</th><th>什么时候收集</th><th>用途</th></tr>
+<tr><td>用户名</td><td>注册时</td><td>登录、显示身份</td></tr>
+<tr><td>密码</td><td>注册时</td><td>登录。<strong>只保存 PBKDF2 哈希，不保存明文</strong></td></tr>
+<tr><td>恢复码</td><td>注册时生成</td><td>忘记密码时重置。<strong>同样只保存哈希</strong></td></tr>
+<tr><td>提问内容</td><td>你发布问题时</td><td>展示给所有用户</td></tr>
+<tr><td>回答内容</td><td>你回答别人的问题时</td><td>只展示给该问题的提问者</td></tr>
+<tr><td>表情回应</td><td>提问者回应回答时</td><td>统计与展示</td></tr>
+<tr><td>登录令牌</td><td>登录后</td><td>保持登录状态，30 天过期</td></tr>
+<tr><td>IP 地址</td><td>每次请求</td><td>仅用于频率限制与防刷，<strong>只在内存中短暂保留，不写数据库</strong></td></tr>
+</table>
+<p>我们不收集：通讯录、位置、相册、设备标识符、剪贴板、麦克风、摄像头。</p>
+<h2>二、信息存在哪里</h2>
+<p>存储在你所连接的那台服务器上（由本应用的运营者部署，数据库为 SQLite 文件）。</p>
+<p>如果你使用的是别人分享的服务器地址，数据就存在那台服务器上。</p>
+<h2>三、我们如何使用</h2>
+<ul>
+<li>提供提问、回答、表情、统计这些功能</li>
+<li>防止刷屏、暴力破解和滥用（频率限制、登录失败锁定）</li>
+<li>处理举报：同一问题被 3 个不同用户举报后会自动隐藏，等待管理员复核</li>
+</ul>
+<p><strong>不会</strong>用于：广告投放、用户画像、信用评估、向任何第三方出售或共享。</p>
+<h2>四、谁能看到什么</h2>
+<ul>
+<li><strong>提问</strong>：所有登录用户可见</li>
+<li><strong>回答</strong>：<strong>只有该问题的提问者能看到</strong>；其他用户只能看到&quot;有几个回答&quot;</li>
+<li><strong>表情</strong>：只有提问者和该条回答的作者能看到统计</li>
+<li><strong>用户名</strong>：不出现在回答里，回答对提问者也是匿名的</li>
+</ul>
+<h2>五、你能怎么删</h2>
+<ul>
+<li><strong>删单条</strong>：问题详情页可删除自己的问题；「我的 → 我答的」可撤回自己的回答。删除立即生效，回答和表情一并删除</li>
+<li><strong>注销账号</strong>：「我的 → 注销账号」，输入密码确认后，账号、你的全部提问、回答、表情<strong>永久删除，不可恢复</strong></li>
+<li><strong>恢复码</strong>：注册时显示一次，用于自助重置密码；管理员也可以用命令行重置</li>
+</ul>
+<h2>六、保留期限</h2>
+<p>数据保留到你主动删除（单条或注销）为止。注销后服务端不保留副本；备份中的旧数据会随备份轮换自然过期（建议运营者不超过 30 天）。</p>
+<h2>七、儿童</h2>
+<p>本应用不面向 14 岁以下儿童。若你是未成年人，请在监护人同意后使用。</p>
+<h2>八、安全</h2>
+<ul>
+<li>密码与恢复码使用 PBKDF2-SHA256（12 万次迭代）加盐哈希</li>
+<li>传输层建议使用 HTTPS（部署方案使用 Caddy 自动证书）</li>
+<li>服务端对请求体大小、频率、登录失败次数做了限制</li>
+<li>说明：没有任何系统能保证 100% 安全，请勿在提问或回答中填写身份证号、银行卡、住址等敏感信息</li>
+</ul>
+<h2>九、政策变更</h2>
+<p>政策有变化时，会更新本页顶部的日期，并在应用内提示。继续使用即表示接受更新后的政策。</p>
+<h2>十、联系方式</h2>
+<p>运营者：&lt;在此填写你的名字或团队名&gt;</p>
+<p>邮箱：&lt;在此填写联系邮箱&gt;</p>
+<p>服务器：&lt;在此填写你的域名&gt;</p>
+</main></body></html>
